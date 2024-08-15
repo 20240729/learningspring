@@ -14,7 +14,7 @@ public class JacksonTest {
 
         ObjectMapper objectMapper = new ObjectMapper(); // Jackson 라이브러리의 ObjectMapper
         String json = objectMapper.writeValueAsString(star);
-        //스타 객체를 스트링 타입으로 만들어 줌
+        // 스타 객체를 스트링 타입으로 만들어 줌
 
         System.out.println("json = " + json);
     }
