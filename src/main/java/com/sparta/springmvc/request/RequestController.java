@@ -1,10 +1,7 @@
 package com.sparta.springmvc.request;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("/hello/request")
@@ -22,4 +19,23 @@ public class RequestController {
     {
         return String.format("Hello, @PathVariable.<br> name = %s, age = %d", name, age);
     }
+
+    // [Request sample]
+    // GET http://localhost:8080/hello/request/form/param?name=Robbie&age=95
+    // 리퀘스트파람 혹은 쿼리스트림이라고도 부름
+    @GetMapping("/form/param")
+    @ResponseBody
+    public String helloGetRequestParam(@RequestParam String name, @RequestParam int age){
+        return String.format("Hello, @RequestParam.<br> name = %s, age = %d", name, age);
+    }
+
+
+
+
+
+
+
+
+
+
 }
